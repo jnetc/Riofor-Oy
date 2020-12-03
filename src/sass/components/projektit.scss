@@ -1,0 +1,269 @@
+@import '../colors.scss';
+@import '../sizes.scss';
+
+section#projektit {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: minmax(0, 1380px);
+  padding-top: 100px;
+  padding-bottom: 200px;
+  h3 {
+    font-size: 2.2rem;
+  }
+  h3:nth-of-type(2) {
+    padding-top: 30px;
+  }
+  span {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+}
+
+article.project {
+  display: grid;
+  grid-template-columns:
+    40px min-content minmax(100px, 200px) minmax(200px, 700px) minmax(
+      200px,
+      700px
+    )
+    40px;
+  grid-template-rows: 1fr 1fr;
+  padding: 20px 30px;
+  position: relative;
+  background: transparent;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  z-index: 5;
+  @media screen and (max-width: $laptops) {
+    grid-template-columns:
+      40px min-content minmax(100px, 300px) minmax(200px, 1000px)
+      40px;
+  }
+  @media screen and (max-width: $landscape) {
+    grid-template-columns: 40px min-content minmax(100px, 400px) 40px;
+  }
+  @media screen and (max-width: $phones) {
+    grid-template-columns: 40px minmax(100px, 450px) 40px;
+  }
+  &.disable-info {
+    color: $txt-b;
+    background: $element;
+    // border-color: $border;
+    // border-color: darken($element, 15);
+    // .el:nth-child(even) {
+    //   color: transparentize($btn, 0.4);
+    // }
+    box-shadow: 0 5px 5px transparentize($btn, 0.9),
+      0 20px 20px transparentize($btn, 0.9);
+    &:hover {
+      background: lighten($element, 5);
+      box-shadow: none;
+    }
+  }
+  &.available-info {
+    color: $txt-b;
+    // background: darken($element, 10);
+    border-color: transparentize($border, 0.6);
+    // box-shadow: 0 5px 5px transparentize($btn, 0.7),
+    //   0 20px 20px transparentize($btn, 0.9);
+    &:hover {
+      border-color: transparent;
+      background: $element;
+      // background: darken($element, 10);
+      box-shadow: none;
+    }
+  }
+
+  .status {
+    grid-column: 1;
+    grid-row: 1 /-1;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    &.active {
+      &::after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: $project;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 5px 5px transparentize($project, 0.8);
+      }
+      &::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        background: $project;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0px 0px transparentize($project, 0);
+        animation: status-active 2s ease-in-out infinite;
+      }
+      @keyframes status-active {
+        50% {
+          box-shadow: 0 0 0px 15px transparentize($project, 1);
+        }
+        51% {
+          box-shadow: 0 0 0px 0px transparentize($project, 1);
+          display: none;
+        }
+      }
+    }
+    &.done {
+      &::after {
+        content: '';
+        width: 4px;
+        height: 25px;
+        position: absolute;
+        top: 8px;
+        left: 20px;
+        background: $project;
+        transform: rotate(40deg);
+      }
+      &::before {
+        content: '';
+        width: 4px;
+        height: 15px;
+        position: absolute;
+        top: 16px;
+        left: 9px;
+        background: $project;
+        transform: rotate(-45deg);
+      }
+    }
+    .done {
+      transform: scale(1.4);
+    }
+  }
+
+  .el {
+    padding-left: 30px;
+  }
+  .el:nth-child(odd) {
+    font-size: 1.4rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    color: $txt-b;
+  }
+
+  .el:nth-child(even) {
+    // color: transparentize($element, 0.5);
+    color: $btn;
+    font-size: 1.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 400;
+  }
+
+  .date-label {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .el.date {
+    grid-column: 2;
+    grid-row: 2;
+    font-weight: bold;
+  }
+  .contractor-label {
+    grid-column: 3;
+    grid-row: 1;
+    @media screen and (max-width: $phones) {
+      display: none;
+    }
+  }
+  .contractor {
+    grid-column: 3;
+    grid-row: 2;
+    @media screen and (max-width: $phones) {
+      display: none;
+    }
+  }
+  .name-label {
+    grid-column: 4;
+    grid-row: 1;
+    @media screen and (max-width: $landscape) {
+      display: none;
+    }
+  }
+  .name {
+    grid-column: 4;
+    grid-row: 2;
+    @media screen and (max-width: $landscape) {
+      display: none;
+    }
+  }
+  .address-label {
+    grid-column: 5;
+    grid-row: 1;
+    padding-right: 15px;
+    @media screen and (max-width: $laptops) {
+      display: none;
+    }
+  }
+  .address {
+    grid-column: 5;
+    grid-row: 2;
+    padding-right: 15px;
+    font-style: normal;
+    @media screen and (max-width: $laptops) {
+      display: none;
+    }
+  }
+
+  .expand-icon {
+    grid-column: 6;
+    grid-row: 1/ -1;
+    width: 6px;
+    height: 6px;
+    position: relative;
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    @media screen and (max-width: $tablets) {
+      grid-column: 5;
+    }
+    &.light {
+      background: $element;
+    }
+    &.dark {
+      background: $txt-b;
+    }
+    &:after,
+    &:before {
+      content: '';
+      width: inherit;
+      height: inherit;
+      position: absolute;
+      top: -15px;
+      left: 0;
+      border-radius: inherit;
+      background: inherit;
+    }
+    &:after {
+      top: -15px;
+    }
+    &:before {
+      top: 15px;
+    }
+  }
+}

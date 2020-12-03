@@ -1,0 +1,142 @@
+@import '../colors.scss';
+@import '../sizes.scss';
+
+header {
+  grid-column: 1 / -1;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.navigation {
+  width: 100%;
+  height: 70px;
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  // padding: 0 24px;
+  @media screen and (max-width: $desktops) {
+    width: 1920px;
+    // padding: 0;
+  }
+  @media screen and (max-width: $tablets) {
+    height: 70px;
+  }
+  @media screen and (max-width: $phones) {
+    height: 60px;
+    // padding: 0 10px;
+  }
+  // > a {
+  //   margin-left: 17px;
+  // }
+  ul {
+    grid-column: 2;
+    display: flex;
+    justify-self: right;
+    @media screen and (max-width: $tablets) {
+      display: none;
+    }
+    li {
+      a.nav-link {
+        margin: 0 5px;
+        padding: 12px;
+        color: $txt-b;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border: 2px solid transparent;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          border-color: $txt-b;
+        }
+        &.act-link {
+          border-color: $txt-b;
+        }
+      }
+    }
+  }
+}
+
+// MOBILE MENU
+#nav-mob {
+  display: none;
+  @media screen and (max-width: $tablets) {
+    grid-column: 2;
+    width: 45px;
+    height: 25px;
+    display: flex;
+    position: relative;
+    justify-self: right;
+    cursor: pointer;
+    background: transparent;
+    span {
+      width: 30px;
+      height: 3px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: $txt-b;
+      transform: translate(-50%, -50%);
+      &::after {
+        content: '';
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        top: -9px;
+        left: 0;
+        background-color: inherit;
+      }
+      &::before {
+        content: '';
+        width: 18px;
+        height: inherit;
+        position: absolute;
+        top: 9px;
+        right: 0;
+        background-color: inherit;
+      }
+    }
+  }
+}
+
+#nav-mob-menu {
+  display: none;
+  @media screen and (max-width: $tablets) {
+    ul {
+      width: 80vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      li {
+        margin: 20px 0;
+        a.nav-link {
+          padding: 12px;
+          color: $txt-b;
+          font-size: 2rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          border: 2px solid transparent;
+          transition: all 0.3s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            border-color: $txt-b;
+          }
+          &.act-link {
+            border-color: $txt-b;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $phones) {
+    ul li a.nav-link {
+      font-size: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+@import '../colors.scss';
+@import '../sizes.scss';
+
+section#rakentamme {
+  display: grid;
+  gap: 90px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  grid-template-columns: minmax(300px, 400px) minmax(300px, 400px) minmax(
+      300px,
+      400px
+    );
+  justify-content: center;
+  @media screen and (max-width: $laptops) {
+    gap: 30px;
+  }
+  @media screen and (max-width: $tablets) {
+    height: auto;
+    grid-template-columns: 1fr minmax(300px, 650px) 1fr;
+    gap: 0;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  article {
+    grid-column: 1 /-1;
+    text-align: center;
+    h2 {
+      font-size: 70px;
+      @media screen and (max-width: $phones) {
+        font-size: 50px;
+        line-height: 45px;
+      }
+    }
+    p {
+      grid-column: 1 /-1;
+      font-size: 1.5rem;
+      padding-top: 20px;
+      line-height: 32px;
+      @media screen and (max-width: $laptops) {
+        padding-bottom: 50px;
+      }
+      @media screen and (max-width: $phones) {
+        padding-bottom: 120px;
+      }
+    }
+  }
+  div.rakentamme {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 70px 40px;
+    border-radius: 10px;
+    background-color: $element;
+    // background-color: transparentize($element, 0.5);
+    border: 2px solid transparent;
+    box-shadow: 0 5px 5px transparentize($btn, 0.9),
+      0 20px 20px transparentize($btn, 0.9);
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background: lighten($element, 5);
+      box-shadow: none;
+    }
+    @media screen and (max-width: $tablets) {
+      grid-column: 2;
+      margin-bottom: 30px;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      svg {
+        fill: transparentize($btn, 0.5);
+      }
+    }
+    h3 {
+      font-size: 1.3rem;
+      letter-spacing: 0.1rem;
+      margin: 36px 0 25px;
+    }
+    p {
+      line-height: 25px;
+    }
+  }
+}

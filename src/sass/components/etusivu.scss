@@ -1,0 +1,295 @@
+@import '../../sass/colors.scss';
+@import '../../sass/sizes.scss';
+
+section#etusivu {
+  grid-column: 1 / -1;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(300px, 650px) 80px minmax(300px, 650px);
+  position: relative;
+  @media screen and (max-width: $tablets) {
+    height: auto;
+    grid-template-columns: 1fr minmax(300px, 650px) 1fr;
+    grid-template-rows: max-content min-content;
+    padding-top: 80px;
+    margin-bottom: 100px;
+  }
+  @media screen and (max-width: $phones) and (orientation: landscape) {
+    // height: 100%;
+    // grid-template-columns: 1fr minmax(300px, 650px) 1fr;
+    // padding-top: 0px;
+    // padding-bottom: 0px;
+  }
+
+  .gatsby-image-wrapper {
+    width: 100%;
+    grid-column: 3;
+    grid-row: 1 / -1;
+    z-index: 3;
+    > div {
+      display: none;
+    }
+    @media screen and (max-width: $tablets) {
+      width: 400px;
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      margin-bottom: 30px;
+      order: 1;
+    }
+    @media screen and (max-width: $phones) {
+      width: 280px;
+    }
+  }
+  div.etusivu {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    @media screen and (max-width: $tablets) {
+      grid-column: 2;
+      grid-row: 2;
+      order: 2;
+    }
+    h1 {
+      max-width: 500px;
+      line-height: 65px;
+      color: $txt-b;
+      @media screen and (max-width: $phones) {
+        font-size: 50px;
+        line-height: 45px;
+        text-align: center;
+      }
+    }
+    h3 {
+      margin: 15px 0 60px;
+      color: $txt-b;
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      line-height: 30px;
+      @media screen and (max-width: $phones) {
+        margin: 15px 0 40px;
+      }
+    }
+    .etusivu-btns {
+      display: flex;
+      @media screen and (max-width: $phones) {
+        justify-content: center;
+      }
+    }
+    a.fill {
+      margin-right: 30px;
+      @media screen and (max-width: $laptops) {
+        margin-right: 11px;
+      }
+    }
+    a.icon-none {
+      @media screen and (max-width: $phones) {
+        display: none;
+      }
+    }
+    a.icon-email {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      @media screen and (max-width: $phones) {
+        display: flex;
+      }
+    }
+    a {
+      @media screen and (max-width: $phones) {
+        padding: 15px 25px;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  #scroll-icon {
+    width: 28px;
+    height: 46px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    margin: 0 auto 40px;
+    border: 3px solid $element;
+    border-radius: 50px;
+    transform: translateX(-50%);
+    z-index: 5;
+    &::before {
+      content: '';
+      width: 4px;
+      height: 10px;
+      position: absolute;
+      top: 7px;
+      left: 9px;
+      background: $element;
+      border-radius: 50px;
+      animation: scroll-anim 3s ease-in-out infinite;
+    }
+    @media screen and (max-width: $tablets) {
+      display: none;
+    }
+  }
+  svg#splash {
+    grid-column: 1;
+    // width: 60vw;
+    // height: 100vh;
+    width: 1202px;
+    height: 1032px;
+    position: absolute;
+    top: -10px;
+    left: -380px;
+    @media screen and (max-width: $tablets) {
+      display: none;
+    }
+    // @media screen and (min-width: $desktops) {
+    //   width: 846px;
+    //   height: 1098px;
+    // }
+  }
+}
+
+// .cube {
+//   position: absolute;
+//   border-radius: 10px;
+//   background-color: transparentize(white, 0.8);
+//   box-shadow: 0 0 10px 10px transparentize(darken($bg, 5), 0.9);
+//   z-index: -1;
+//   @media screen and (max-width: $tablets) {
+//     display: none;
+//   }
+// }
+// .cube:nth-of-type(1) {
+//   width: 120px;
+//   height: 120px;
+//   left: -100px;
+//   top: -80px;
+//   animation: cube1 25s ease-in-out infinite;
+// }
+// .cube:nth-of-type(2) {
+//   width: 70px;
+//   height: 70px;
+//   left: 150px;
+//   top: -145px;
+//   animation: cube2 15s ease-in-out infinite;
+// }
+// .cube:nth-of-type(3) {
+//   width: 90px;
+//   height: 90px;
+//   left: -20px;
+//   top: -250px;
+//   animation: cube3 25s ease-in-out infinite;
+// }
+// .cube:nth-of-type(4) {
+//   width: 50px;
+//   height: 50px;
+//   left: 40px;
+//   top: -190px;
+//   animation: cube4 15s ease-in-out infinite;
+// }
+// .cube:nth-of-type(5) {
+//   width: 150px;
+//   height: 150px;
+//   left: 50px;
+//   top: 200px;
+//   animation: cube5 20s ease-in-out infinite;
+// }
+// .cube:nth-of-type(6) {
+//   width: 80px;
+//   height: 80px;
+//   left: -80px;
+//   top: 380px;
+//   animation: cube6 30s ease-in-out infinite;
+// }
+// .cube:nth-of-type(7) {
+//   width: 100px;
+//   height: 100px;
+//   left: 120px;
+//   top: 420px;
+//   animation: cube7 25s ease-in-out infinite;
+// }
+// .cube:nth-of-type(8) {
+//   width: 60px;
+//   height: 60px;
+//   left: 95px;
+//   top: 400px;
+//   animation: cube8 15s ease-in-out infinite;
+// }
+
+// @keyframes cube1 {
+//   50% {
+//     transform: scale(0.8);
+//   }
+// }
+// @keyframes cube2 {
+//   50% {
+//     transform: scale(1.1);
+//   }
+// }
+// @keyframes cube3 {
+//   50% {
+//     transform: scale(1.2);
+//   }
+// }
+// @keyframes cube4 {
+//   50% {
+//     transform: scale(0.7);
+//   }
+// }
+// @keyframes cube5 {
+//   50% {
+//     transform: scale(0.5);
+//   }
+// }
+// @keyframes cube6 {
+//   50% {
+//     transform: scale(1.2);
+//   }
+// }
+// @keyframes cube7 {
+//   50% {
+//     transform: scale(0.9);
+//   }
+// }
+// @keyframes cube8 {
+//   50% {
+//     transform: scale(1.3);
+//   }
+// }
+// @keyframes cube2 {
+//   0% {
+//     transform: translateX(0) rotate(40deg);
+//   }
+//   50% {
+//     transform: translateX(-20px) rotate(-45deg);
+//   }
+//   100% {
+//     transform: translateX(0) rotate(40deg);
+//   }
+// }
+
+@keyframes scroll-anim {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  10% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(0, 15px, 0);
+    opacity: 1;
+  }
+  80% {
+    transform: translate3d(0, 15px, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 15px, 0);
+    opacity: 0;
+  }
+}
