@@ -1,10 +1,17 @@
 import React from 'react';
-
+// Styles
 import '../../sass/components/modals.scss';
 import '../../sass/components/modal-project.scss';
+// Component
+import Image from './Image';
+// Context
 import { useStore } from '../../store/store';
-const Youtube = () => {
+
+const Modal = () => {
   const { modal, modalHandler } = useStore();
+
+  // console.log(modal);
+
   return (
     <template id="modal" className={modal.active ? 'show' : ''}>
       <span
@@ -16,11 +23,19 @@ const Youtube = () => {
         onClick={() => modalHandler({ active: false, data: null })}
       />
       <section id="modal-project">
-        <div id="modal-pic">Pic</div>
-        <a href="http://" className="btn fill">
+        <Image image={modal.data?.image} alt={modal.data?.name} />
+        <a
+          href={modal.data?.location}
+          className="btn fill"
+          target="_blank"
+          rel="noreferrer">
           Kuvat pilvissa
         </a>
-        <a href="http://" className="btn fill">
+        <a
+          href={modal.data?.location}
+          className="btn fill"
+          target="_blank"
+          rel="noreferrer">
           Osoite kartalla
         </a>
         <article id="modal-data">
@@ -45,7 +60,13 @@ const Youtube = () => {
           </div>
           <div className="modal-block right">
             <h3>Lisää tiedot</h3>
-            <p id="modal-block_desc">{modal.data?.descriprion}</p>
+            <div
+              id="modal-block_desc"
+              className="rich-txt"
+              dangerouslySetInnerHTML={{
+                __html: modal?.data?.info?.childMarkdownRemark?.html,
+              }}
+            />
           </div>
         </article>
       </section>
@@ -53,4 +74,4 @@ const Youtube = () => {
   );
 };
 
-export default Youtube;
+export default Modal;

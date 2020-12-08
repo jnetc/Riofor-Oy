@@ -9,6 +9,9 @@ section#projektit {
   padding-bottom: 200px;
   h3 {
     font-size: 2.2rem;
+    @media screen and (max-width: $laptops) {
+      font-size: 1.6rem;
+    }
   }
   h3:nth-of-type(2) {
     padding-top: 30px;
@@ -52,11 +55,6 @@ article.project {
   &.disable-info {
     color: $txt-b;
     background: $element;
-    // border-color: $border;
-    // border-color: darken($element, 15);
-    // .el:nth-child(even) {
-    //   color: transparentize($btn, 0.4);
-    // }
     box-shadow: 0 5px 5px transparentize($btn, 0.9),
       0 20px 20px transparentize($btn, 0.9);
     &:hover {
@@ -66,14 +64,10 @@ article.project {
   }
   &.available-info {
     color: $txt-b;
-    // background: darken($element, 10);
     border-color: transparentize($border, 0.6);
-    // box-shadow: 0 5px 5px transparentize($btn, 0.7),
-    //   0 20px 20px transparentize($btn, 0.9);
     &:hover {
       border-color: transparent;
       background: $element;
-      // background: darken($element, 10);
       box-shadow: none;
     }
   }
@@ -166,7 +160,6 @@ article.project {
   }
 
   .el:nth-child(even) {
-    // color: transparentize($element, 0.5);
     color: $btn;
     font-size: 1.1rem;
     overflow: hidden;

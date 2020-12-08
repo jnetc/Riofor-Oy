@@ -2,51 +2,31 @@
 @import '../sizes.scss';
 
 section#rioforista {
-  // grid-column: 1 / -1;
-  // height: 100vh;
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-columns: minmax(300px, 650px) 80px minmax(300px, 650px);
+  column-gap: 80px;
+  grid-template-columns: minmax(300px, 650px) minmax(300px, 650px);
   position: relative;
   margin-bottom: 200px;
   @media screen and (max-width: $tablets) {
     height: auto;
     grid-template-columns: 1fr minmax(300px, 650px) 1fr;
+    column-gap: 0;
     grid-template-rows: max-content min-content;
-    // padding-top: 80px;
     margin-bottom: 100px;
   }
-  @media screen and (max-width: $phones) and (orientation: landscape) {
-    // height: 100%;
-    // grid-template-columns: 1fr minmax(300px, 650px) 1fr;
-    // padding-top: 0px;
-    // padding-bottom: 0px;
-  }
 
-  .gatsby-image-wrapper {
-    width: 100%;
+  img.illustrations {
     grid-column: 1;
     grid-row: 1 / -1;
-    z-index: 3;
-    > div {
-      display: none;
-    }
     @media screen and (max-width: $tablets) {
-      width: 400px;
-      grid-column: 2;
       grid-row: 1;
-      justify-self: center;
-      margin-bottom: 30px;
-      order: 1;
-    }
-    @media screen and (max-width: $phones) {
-      width: 280px;
     }
   }
 
   div.rioforista {
-    grid-column: 3;
+    grid-column: 2;
     grid-row: 1 / -1;
     width: 100%;
     position: relative;
@@ -56,25 +36,21 @@ section#rioforista {
       grid-row: 2;
       order: 2;
     }
-    // h2 {
-    //   max-width: 500px;
-    //   line-height: 65px;
-    //   color: $txt-b;
-    //   @media screen and (max-width: $phones) {
-    //     line-height: 45px;
-    //     text-align: center;
-    //   }
-    // }
-    p {
+    h2 {
+      @media screen and (max-width: $phones) {
+        font-size: 39px;
+        line-height: 45px;
+      }
+    }
+    div {
       margin-top: 60px;
+    }
+    p {
       color: $txt-b;
       font-size: 1.3rem;
       font-weight: 500;
       letter-spacing: 1.2px;
       line-height: 30px;
-      // @media screen and (max-width: $phones) {
-      //   margin: 15px 0 40px;
-      // }
     }
   }
 }

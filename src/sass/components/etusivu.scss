@@ -7,13 +7,15 @@ section#etusivu {
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-columns: minmax(300px, 650px) 80px minmax(300px, 650px);
+  column-gap: 80px;
+  grid-template-columns: minmax(300px, 650px) minmax(300px, 650px);
+  grid-template-rows: 70px 1fr;
   position: relative;
   @media screen and (max-width: $tablets) {
     height: auto;
     grid-template-columns: 1fr minmax(300px, 650px) 1fr;
-    grid-template-rows: max-content min-content;
-    padding-top: 80px;
+    grid-template-rows: 70px 1fr 1fr;
+    column-gap: 0;
     margin-bottom: 100px;
   }
   @media screen and (max-width: $phones) and (orientation: landscape) {
@@ -23,24 +25,11 @@ section#etusivu {
     // padding-bottom: 0px;
   }
 
-  .gatsby-image-wrapper {
-    width: 100%;
-    grid-column: 3;
+  img.illustrations {
+    grid-column: 2;
     grid-row: 1 / -1;
-    z-index: 3;
-    > div {
-      display: none;
-    }
     @media screen and (max-width: $tablets) {
-      width: 400px;
-      grid-column: 2;
-      grid-row: 1;
-      justify-self: center;
-      margin-bottom: 30px;
-      order: 1;
-    }
-    @media screen and (max-width: $phones) {
-      width: 280px;
+      grid-row: 2;
     }
   }
   div.etusivu {
@@ -51,7 +40,7 @@ section#etusivu {
     z-index: 10;
     @media screen and (max-width: $tablets) {
       grid-column: 2;
-      grid-row: 2;
+      grid-row: 3;
       order: 2;
     }
     h1 {
@@ -64,7 +53,7 @@ section#etusivu {
         text-align: center;
       }
     }
-    h3 {
+    h2 {
       margin: 15px 0 60px;
       color: $txt-b;
       font-size: 1.3rem;
@@ -114,7 +103,7 @@ section#etusivu {
     bottom: 0px;
     left: 50%;
     margin: 0 auto 40px;
-    border: 3px solid $element;
+    border: 3px solid $border;
     border-radius: 50px;
     transform: translateX(-50%);
     z-index: 5;
@@ -125,7 +114,7 @@ section#etusivu {
       position: absolute;
       top: 7px;
       left: 9px;
-      background: $element;
+      background: $border;
       border-radius: 50px;
       animation: scroll-anim 3s ease-in-out infinite;
     }
@@ -135,8 +124,8 @@ section#etusivu {
   }
   svg#splash {
     grid-column: 1;
-    // width: 60vw;
-    // height: 100vh;
+    // width: 63vw;
+    // height: 50vh;
     width: 1202px;
     height: 1032px;
     position: absolute;
@@ -145,131 +134,8 @@ section#etusivu {
     @media screen and (max-width: $tablets) {
       display: none;
     }
-    // @media screen and (min-width: $desktops) {
-    //   width: 846px;
-    //   height: 1098px;
-    // }
   }
 }
-
-// .cube {
-//   position: absolute;
-//   border-radius: 10px;
-//   background-color: transparentize(white, 0.8);
-//   box-shadow: 0 0 10px 10px transparentize(darken($bg, 5), 0.9);
-//   z-index: -1;
-//   @media screen and (max-width: $tablets) {
-//     display: none;
-//   }
-// }
-// .cube:nth-of-type(1) {
-//   width: 120px;
-//   height: 120px;
-//   left: -100px;
-//   top: -80px;
-//   animation: cube1 25s ease-in-out infinite;
-// }
-// .cube:nth-of-type(2) {
-//   width: 70px;
-//   height: 70px;
-//   left: 150px;
-//   top: -145px;
-//   animation: cube2 15s ease-in-out infinite;
-// }
-// .cube:nth-of-type(3) {
-//   width: 90px;
-//   height: 90px;
-//   left: -20px;
-//   top: -250px;
-//   animation: cube3 25s ease-in-out infinite;
-// }
-// .cube:nth-of-type(4) {
-//   width: 50px;
-//   height: 50px;
-//   left: 40px;
-//   top: -190px;
-//   animation: cube4 15s ease-in-out infinite;
-// }
-// .cube:nth-of-type(5) {
-//   width: 150px;
-//   height: 150px;
-//   left: 50px;
-//   top: 200px;
-//   animation: cube5 20s ease-in-out infinite;
-// }
-// .cube:nth-of-type(6) {
-//   width: 80px;
-//   height: 80px;
-//   left: -80px;
-//   top: 380px;
-//   animation: cube6 30s ease-in-out infinite;
-// }
-// .cube:nth-of-type(7) {
-//   width: 100px;
-//   height: 100px;
-//   left: 120px;
-//   top: 420px;
-//   animation: cube7 25s ease-in-out infinite;
-// }
-// .cube:nth-of-type(8) {
-//   width: 60px;
-//   height: 60px;
-//   left: 95px;
-//   top: 400px;
-//   animation: cube8 15s ease-in-out infinite;
-// }
-
-// @keyframes cube1 {
-//   50% {
-//     transform: scale(0.8);
-//   }
-// }
-// @keyframes cube2 {
-//   50% {
-//     transform: scale(1.1);
-//   }
-// }
-// @keyframes cube3 {
-//   50% {
-//     transform: scale(1.2);
-//   }
-// }
-// @keyframes cube4 {
-//   50% {
-//     transform: scale(0.7);
-//   }
-// }
-// @keyframes cube5 {
-//   50% {
-//     transform: scale(0.5);
-//   }
-// }
-// @keyframes cube6 {
-//   50% {
-//     transform: scale(1.2);
-//   }
-// }
-// @keyframes cube7 {
-//   50% {
-//     transform: scale(0.9);
-//   }
-// }
-// @keyframes cube8 {
-//   50% {
-//     transform: scale(1.3);
-//   }
-// }
-// @keyframes cube2 {
-//   0% {
-//     transform: translateX(0) rotate(40deg);
-//   }
-//   50% {
-//     transform: translateX(-20px) rotate(-45deg);
-//   }
-//   100% {
-//     transform: translateX(0) rotate(40deg);
-//   }
-// }
 
 @keyframes scroll-anim {
   0% {

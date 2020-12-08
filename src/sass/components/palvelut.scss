@@ -1,9 +1,9 @@
 @import '../colors.scss';
 @import '../sizes.scss';
 
-section#rakentamme {
+section#palvelut {
   display: grid;
-  gap: 90px;
+  column-gap: 90px;
   padding-top: 200px;
   padding-bottom: 200px;
   grid-template-columns: minmax(300px, 400px) minmax(300px, 400px) minmax(
@@ -12,39 +12,42 @@ section#rakentamme {
     );
   justify-content: center;
   @media screen and (max-width: $laptops) {
-    gap: 30px;
+    column-gap: 30px;
   }
   @media screen and (max-width: $tablets) {
     height: auto;
     grid-template-columns: 1fr minmax(300px, 650px) 1fr;
-    gap: 0;
+    column-gap: 0;
     padding-top: 70px;
     padding-bottom: 70px;
   }
-  article {
+  h2,
+  > .content {
     grid-column: 1 /-1;
+  }
+  h2 {
     text-align: center;
-    h2 {
-      font-size: 70px;
-      @media screen and (max-width: $phones) {
-        font-size: 50px;
-        line-height: 45px;
-      }
+    font-size: 70px;
+    @media screen and (max-width: $phones) {
+      font-size: 45px;
+      line-height: 45px;
     }
+  }
+  > .content {
     p {
-      grid-column: 1 /-1;
-      font-size: 1.5rem;
-      padding-top: 20px;
-      line-height: 32px;
+      font-size: 1.3rem;
+      padding: 20px 0 90px;
+      line-height: 30px;
       @media screen and (max-width: $laptops) {
-        padding-bottom: 50px;
+        padding-bottom: 90px;
       }
       @media screen and (max-width: $phones) {
         padding-bottom: 120px;
       }
     }
   }
-  div.rakentamme {
+
+  div.palvelut {
     min-height: auto;
     display: flex;
     flex-direction: column;
@@ -53,15 +56,10 @@ section#rakentamme {
     padding: 70px 40px;
     border-radius: 10px;
     background-color: $element;
-    // background-color: transparentize($element, 0.5);
     border: 2px solid transparent;
     box-shadow: 0 5px 5px transparentize($btn, 0.9),
       0 20px 20px transparentize($btn, 0.9);
     transition: all 0.3s ease-in-out;
-    &:hover {
-      background: lighten($element, 5);
-      box-shadow: none;
-    }
     @media screen and (max-width: $tablets) {
       grid-column: 2;
       margin-bottom: 30px;
@@ -70,7 +68,7 @@ section#rakentamme {
       display: flex;
       align-items: center;
       svg {
-        fill: transparentize($btn, 0.5);
+        fill: transparentize($border, 0.2);
       }
     }
     h3 {
@@ -78,8 +76,11 @@ section#rakentamme {
       letter-spacing: 0.1rem;
       margin: 36px 0 25px;
     }
-    p {
-      line-height: 25px;
+    div {
+      white-space: pre-wrap;
+      p {
+        line-height: 25px;
+      }
     }
   }
 }

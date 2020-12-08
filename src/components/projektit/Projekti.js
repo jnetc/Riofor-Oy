@@ -1,12 +1,11 @@
 import React from 'react';
-
+// Context
 import { useStore } from '../../store/store';
-
+// Import Icon
 import Done from '../icons/Done';
 
 const Projekti = ({ data }) => {
   const { modalHandler } = useStore();
-
   return (
     <article
       className={data.done ? 'project available-info' : 'project disable-info'}

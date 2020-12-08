@@ -1,0 +1,77 @@
+@import '../colors.scss';
+@import '../sizes.scss';
+
+form {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  button {
+    padding: 0;
+    .sending {
+      position: relative;
+      div {
+        width: 23px;
+        height: 23px;
+        position: absolute;
+        top: 0;
+        right: -35px;
+        border: solid 3px transparent;
+        border-radius: 50px;
+        border-color: transparentize($txt-btn, 0.7);
+        border-bottom-color: $txt-btn;
+        animation: sending 1s linear infinite;
+      }
+    }
+  }
+  @keyframes sending {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .btn {
+    width: 100%;
+    margin: 24px auto 0;
+  }
+  .success {
+    color: $green;
+  }
+  .error {
+    color: $red;
+  }
+  .success,
+  .error {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+}
+.form-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  color: $txt-b;
+  font-weight: bold;
+  font-size: 1.1rem;
+  input,
+  textarea {
+    max-width: 100%;
+    min-width: 100%;
+    margin-top: 5px;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background: lighten($bg, 10);
+    color: $txt-b;
+    font-size: 1.2rem;
+    font-weight: 500;
+    &::placeholder {
+      opacity: 1;
+    }
+    &:focus {
+      outline: 2px solid $border;
+    }
+  }
+}

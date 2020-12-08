@@ -1,26 +1,21 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 // Styles
 import '../../sass/components/rioforista.scss';
 
 import Image from './Image';
 
 const Rioforista = () => {
+  const { contentfulRioforista } = useStaticQuery(query);
   return (
     <section id="rioforista">
       <div className="rioforista">
-        <h2>Rakennamme taloja, joissa haluat elää</h2>
-        <p>
-          Yhtiö on toimiensa aikana vaikuttanut merkittävästi nykyaikaisen
-          pääkaupunkiseudun arkkitehtonisen ulkonäön muodostumiseen. Riofor
-          Muuraustyöt Oy tarjoaa monien vuosien kokemuksensa, kertyneen
-          tietämyksen ja nykyaikaisen teknologian soveltamisen ansiosta
-          edullisimmat tarjoukset erilaisen monimutkaisuuden tiilitehtaiden
-          alalla. Takaamme parhaan työn laadun, noudattamisen rakennusmääräykset
-          ja -säännöt, rakentamisen aloittamisen vähimmäisaika ja työsuhteen ja
-          sopimuksen mukaisten velvoitteiden määräaikojen tiukka noudattaminen.
-          Kaikki muuraustyöt suoritetaan ammattitaitoisella henkilökunnalla,
-          jolla on ammattitaso ja työkokemus.
-        </p>
+        <h2>{contentfulRioforista.title}</h2>
+        <div
+          className="rich-txt"
+          dangerouslySetInnerHTML={{
+            __html: contentfulRioforista.content.childMarkdownRemark.html,
+          }}></div>
       </div>
       <Image />
     </section>
@@ -28,3 +23,16 @@ const Rioforista = () => {
 };
 
 export default Rioforista;
+
+const query = graphql`
+  query {
+    contentfulRioforista {
+      title
+      content {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+  }
+`;

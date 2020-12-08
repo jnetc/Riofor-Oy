@@ -1,9 +1,10 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
 import SEO from '../components/seo';
 import Modal from '../components/projektit/Modal';
 import Etusivu from '../components/etusivu';
-import Rakentamme from '../components/rakentamme';
+import Palvelut from '../components/palvelut';
 import Projektit from '../components/projektit';
 import Rioforista from '../components/rioforista';
 import Yhteystiedot from '../components/yhteystiedot';
@@ -11,14 +12,14 @@ import Yhteystiedot from '../components/yhteystiedot';
 import { useStore } from '../store/store';
 
 const IndexPage = () => {
+  const { contentfulSeo } = useStaticQuery(query);
   const data = useStore();
   const helmet = {
     meta: {
-      title: 'Riofor-Muuraustyöt Oy | Ammatilaiset muurarit seudulla',
-      descriprion:
-        'Kattaviin palveluihimme kuuluvat muuraus- ja julkisivutyöt sekä muut muuraustyöt',
-      url: 'https://cinemeye.com',
-      image: 'https://cinemeye.com/images/og.png',
+      title: contentfulSeo.title,
+      description: contentfulSeo.description,
+      url: 'https://riofor.com',
+      image: 'https://riofor.com/images/og.png',
     },
   };
   return (
@@ -30,7 +31,7 @@ const IndexPage = () => {
       />
       <Modal />
       <Etusivu />
-      <Rakentamme />
+      <Palvelut />
       <Projektit />
       <Rioforista />
       <Yhteystiedot />
@@ -39,3 +40,12 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+const query = graphql`
+  query {
+    contentfulSeo {
+      title
+      description
+    }
+  }
+`;

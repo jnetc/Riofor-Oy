@@ -10,7 +10,7 @@ import { useStore } from '../../store/store';
 
 const defaultNavNames = [
   { link: 'Etusivu' },
-  { link: 'Rakentamme' },
+  { link: 'Palvelut' },
   { link: 'Projektit' },
   { link: 'Rioforista' },
   { link: `Yhteystiedot` },
