@@ -14,7 +14,6 @@ section#rioforista {
     grid-template-columns: 1fr minmax(300px, 650px) 1fr;
     column-gap: 0;
     grid-template-rows: max-content min-content;
-    margin-bottom: 100px;
   }
 
   img.illustrations {
@@ -35,12 +34,6 @@ section#rioforista {
       grid-column: 2;
       grid-row: 2;
       order: 2;
-    }
-    h2 {
-      @media screen and (max-width: $phones) {
-        font-size: 39px;
-        line-height: 45px;
-      }
     }
     div {
       margin-top: 60px;

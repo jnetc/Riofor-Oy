@@ -60,18 +60,28 @@ form {
     min-width: 100%;
     margin-top: 5px;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     border: none;
     border-bottom: 2px solid transparent;
     background: lighten($bg, 10);
     color: $txt-b;
     font-size: 1.2rem;
     font-weight: 500;
+    transition: all 0.3s ease-in-out;
     &::placeholder {
       opacity: 1;
     }
     &:focus {
-      outline: 2px solid $border;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      color: $txt-btn;
+    }
+    &:focus-within {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      background-color: $border;
+      color: $element;
+      border-color: $element;
     }
   }
 }

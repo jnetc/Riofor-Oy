@@ -8,6 +8,7 @@ import Palvelut from '../components/palvelut';
 import Projektit from '../components/projektit';
 import Rioforista from '../components/rioforista';
 import Yhteystiedot from '../components/yhteystiedot';
+import Footer from '../components/footer';
 
 import { useStore } from '../store/store';
 
@@ -35,6 +36,7 @@ const IndexPage = () => {
       <Projektit />
       <Rioforista />
       <Yhteystiedot />
+      <Footer />
     </>
   );
 };

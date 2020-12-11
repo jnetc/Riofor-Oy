@@ -12,7 +12,7 @@
 }
 
 ::selection {
-  background-color: $bg;
+  background-color: $txt-btn;
 }
 // CHROME SCROLL PROPERTY
 ::-webkit-scrollbar {
@@ -44,8 +44,7 @@ body,
   text-rendering: optimizeSpeed;
   background-color: $bg;
 }
-section,
-footer {
+section {
   position: relative;
   padding: 0 24px;
   @media screen and (max-width: $tablets) {
@@ -73,11 +72,11 @@ h1 {
 h1,
 h2 {
   font-size: 70px;
-  line-height: 65px;
+  line-height: 80px;
   color: $txt-b;
   @media screen and (max-width: $phones) {
     font-size: 50px;
-    line-height: 45px;
+    line-height: 55px;
   }
 }
 p,

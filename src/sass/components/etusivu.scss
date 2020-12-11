@@ -45,11 +45,8 @@ section#etusivu {
     }
     h1 {
       max-width: 500px;
-      line-height: 65px;
       color: $txt-b;
       @media screen and (max-width: $phones) {
-        font-size: 50px;
-        line-height: 45px;
         text-align: center;
       }
     }

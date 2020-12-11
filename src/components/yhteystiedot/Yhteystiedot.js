@@ -28,10 +28,6 @@ export default Yhteystiedot;
 const query = graphql`
   query {
     contentfulYhteystiedot {
-      address
-      city
-      email
-      phone
       title
       content {
         childMarkdownRemark {
