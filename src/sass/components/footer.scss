@@ -11,7 +11,7 @@ footer {
   color: $element;
   @media screen and (max-width: $tablets) {
     grid-template-columns: 1fr minmax(300px, 650px) 1fr;
-    // grid-template-rows: 70px 1fr 1fr;
+    grid-template-rows: auto auto;
     column-gap: 0;
   }
   h3 {
@@ -52,6 +52,7 @@ footer {
     align-self: flex-start;
     justify-self: flex-end;
     grid-column: 3;
+    grid-row: 1 /-1;
     @media screen and (max-width: $tablets) {
       grid-column: 2;
       align-self: flex-start;
@@ -60,7 +61,6 @@ footer {
     &:nth-of-type(1) {
       font-weight: bold;
       font-size: 3rem;
-      grid-row: 1;
       @media screen and (max-width: $tablets) {
         padding-top: 25px;
         grid-column: 2;
@@ -69,12 +69,13 @@ footer {
       }
     }
     &:nth-of-type(2) {
-      // grid-column: 3;
-      font-size: 1.1rem;
-      padding-top: 15px;
+      position: relative;
+      font-size: 1.3rem;
+      top: 60px;
       @media screen and (max-width: $tablets) {
-        padding-top: 0px;
+        padding-top: 10px;
         grid-row: 4;
+        top: 0;
       }
     }
   }

@@ -4,6 +4,9 @@ import '../../sass/components/modals.scss';
 import '../../sass/components/modal-project.scss';
 // Component
 import Image from './Image';
+// Icons
+import Cloud from '../icons/Cloud';
+import Geo from '../icons/Geo';
 // Context
 import { useStore } from '../../store/store';
 
@@ -26,17 +29,19 @@ const Modal = () => {
         <Image image={modal.data?.image} alt={modal.data?.name} />
         <a
           href={modal.data?.location}
-          className="btn fill"
+          className="btn fill link-icon"
           target="_blank"
           rel="noreferrer">
           Kuvat pilvissa
+          <Cloud />
         </a>
         <a
           href={modal.data?.location}
-          className="btn fill"
+          className="btn fill link-icon shrink-icon"
           target="_blank"
           rel="noreferrer">
           Osoite kartalla
+          <Geo />
         </a>
         <article id="modal-data">
           <div className="modal-block left">

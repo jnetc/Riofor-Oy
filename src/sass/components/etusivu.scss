@@ -65,12 +65,17 @@ section#etusivu {
       display: flex;
       @media screen and (max-width: $phones) {
         justify-content: center;
+        flex-direction: column;
       }
     }
     a.fill {
       margin-right: 30px;
       @media screen and (max-width: $laptops) {
         margin-right: 11px;
+      }
+      @media screen and (max-width: $phones) {
+        margin-right: 0;
+        margin-bottom: 20px;
       }
     }
     a.icon-none {

@@ -159,6 +159,9 @@ img.illustrations {
 
 /// MAIN BUTTON
 .btn {
+  display: grid;
+  align-items: center;
+  justify-content: center;
   padding: 20px 30px;
   position: relative;
   overflow: hidden;
@@ -168,6 +171,7 @@ img.illustrations {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
+  line-height: 15px;
   border-radius: 10px;
   border: 2px solid transparent;
   transition: all 0.3s ease-in-out;
@@ -177,6 +181,9 @@ img.illustrations {
     background: lighten($btn, 10);
     box-shadow: none;
   }
+  svg {
+    transform: scale(1.2);
+  }
   &.fill {
     color: $txt-btn;
     background: $btn;
@@ -185,6 +192,9 @@ img.illustrations {
     &:hover {
       background: darken($btn, 10);
       box-shadow: none;
+    }
+    svg {
+      fill: $txt-btn;
     }
   }
   &.line {
@@ -196,6 +206,23 @@ img.illustrations {
     &:hover {
       background: lighten($element, 5);
       box-shadow: none;
+    }
+    svg {
+      fill: $txt-b;
+    }
+  }
+  &.link-icon {
+    grid-template-columns: max-content 30px;
+    justify-items: flex-end;
+  }
+  &.shrink-icon {
+    justify-items: center;
+  }
+  &.btn-icon {
+    grid-template-columns: 1fr max-content 30px 1fr;
+    justify-items: flex-end;
+    span {
+      grid-column: 2;
     }
   }
 }

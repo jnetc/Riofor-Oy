@@ -7,7 +7,8 @@ import Header from '../navigation';
 import Image from './Image';
 // Icon
 import { Splash } from '../icons/Splash';
-// import Email from '../icons/Email';
+import Email from '../icons/Email';
+import Folder from '../icons/Folder';
 
 const Etusivu = () => {
   return (
@@ -21,11 +22,13 @@ const Etusivu = () => {
           kokemus muurauksen rakentamisesta.
         </h2>
         <div className="etusivu-btns">
-          <Link to="#yhteystiedot" className="btn fill">
+          <Link to="#yhteystiedot" className="btn fill link-icon">
             Pyydä tarjous
+            <Email />
           </Link>
-          <Link to="#projektit" className="btn line icon-none">
+          <Link to="#projektit" className="btn line link-icon">
             Työn alla
+            <Folder />
           </Link>
         </div>
       </div>
