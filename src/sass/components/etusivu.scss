@@ -18,13 +18,6 @@ section#etusivu {
     column-gap: 0;
     margin-bottom: 100px;
   }
-  @media screen and (max-width: $phones) and (orientation: landscape) {
-    // height: 100%;
-    // grid-template-columns: 1fr minmax(300px, 650px) 1fr;
-    // padding-top: 0px;
-    // padding-bottom: 0px;
-  }
-
   img.illustrations {
     grid-column: 2;
     grid-row: 1 / -1;
@@ -126,8 +119,6 @@ section#etusivu {
   }
   svg#splash {
     grid-column: 1;
-    // width: 63vw;
-    // height: 50vh;
     width: 1202px;
     height: 1032px;
     position: absolute;

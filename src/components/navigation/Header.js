@@ -9,7 +9,7 @@ import NavLink from './NavLink';
 import { useStore } from '../../store/store';
 
 const defaultNavNames = [
-  { link: 'Etusivu' },
+  // { link: 'Etusivu' },
   { link: 'Palvelut' },
   { link: 'Projektit' },
   { link: 'Rioforista' },

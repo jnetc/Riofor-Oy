@@ -18,21 +18,15 @@ header {
   display: grid;
   grid-template-columns: 130px 1fr;
   align-items: center;
-  // padding: 0 24px;
   @media screen and (max-width: $desktops) {
     width: 1920px;
-    // padding: 0;
   }
   @media screen and (max-width: $tablets) {
     height: 70px;
   }
   @media screen and (max-width: $phones) {
     height: 60px;
-    // padding: 0 10px;
   }
-  // > a {
-  //   margin-left: 17px;
-  // }
   ul {
     grid-column: 2;
     display: flex;

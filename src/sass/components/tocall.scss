@@ -1,0 +1,50 @@
+@import '../colors.scss';
+@import '../sizes.scss';
+
+#tocall {
+  width: 60px;
+  height: 60px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  border-radius: 50%;
+  background: $btn;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 5px 5px transparentize($btn, 0.8),
+    0 20px 20px transparentize($btn, 0.8);
+  z-index: 1000;
+  @media screen and (max-width: $phones) {
+    display: flex;
+  }
+  svg {
+    fill: $txt-btn;
+  }
+  &::after {
+    content: '';
+    width: calc(100% - 5px);
+    height: calc(100% - 5px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: inherit;
+    border-radius: inherit;
+    transform: translate(-50%, -50%);
+    animation: flash 5s ease-in-out infinite;
+    z-index: -1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    box-shadow: 0 0 0px 0px rgba($btn, 1);
+  }
+  50% {
+    box-shadow: 0 0 20px 20px rgba($btn, 0);
+  }
+  100% {
+    box-shadow: 0 0 0px 0px rgba($btn, 0);
+  }
+}

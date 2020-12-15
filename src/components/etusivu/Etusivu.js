@@ -8,7 +8,6 @@ import Image from './Image';
 // Icon
 import { Splash } from '../icons/Splash';
 import Email from '../icons/Email';
-import Folder from '../icons/Folder';
 
 const Etusivu = () => {
   return (
@@ -26,9 +25,8 @@ const Etusivu = () => {
             Pyydä tarjous
             <Email />
           </Link>
-          <Link to="#projektit" className="btn line link-icon">
+          <Link to="#projektit" className="btn line">
             Työn alla
-            <Folder />
           </Link>
         </div>
       </div>

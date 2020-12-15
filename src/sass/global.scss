@@ -122,23 +122,8 @@ textarea {
   position: relative;
   display: flex;
   gap: 24px;
-
-  // grid-template-columns: repeat(12, 96px);
-  // justify-content: center;
   flex-direction: column;
   align-items: center;
-  // overflow: hidden;
-  @media screen and (min-width: $desktops) {
-  }
-
-  @media screen and (max-width: $laptops) {
-  }
-  @media screen and (max-width: $tablets) {
-    // grid-template-columns: 1fr;
-  }
-  @media screen and (max-width: $phones) {
-    // grid-template-columns: 1fr;
-  }
 }
 
 // См. intro и values стили!!!
@@ -181,9 +166,6 @@ img.illustrations {
     background: lighten($btn, 10);
     box-shadow: none;
   }
-  svg {
-    transform: scale(1.2);
-  }
   &.fill {
     color: $txt-btn;
     background: $btn;
@@ -207,22 +189,9 @@ img.illustrations {
       background: lighten($element, 5);
       box-shadow: none;
     }
-    svg {
-      fill: $txt-b;
-    }
   }
   &.link-icon {
     grid-template-columns: max-content 30px;
     justify-items: flex-end;
-  }
-  &.shrink-icon {
-    justify-items: center;
-  }
-  &.btn-icon {
-    grid-template-columns: 1fr max-content 30px 1fr;
-    justify-items: flex-end;
-    span {
-      grid-column: 2;
-    }
   }
 }

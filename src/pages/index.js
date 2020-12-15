@@ -9,6 +9,8 @@ import Projektit from '../components/projektit';
 import Rioforista from '../components/rioforista';
 import Yhteystiedot from '../components/yhteystiedot';
 import Footer from '../components/footer';
+import ToTop from '../components/totop';
+import ToCall from '../components/tocall';
 
 import { useStore } from '../store/store';
 
@@ -23,6 +25,7 @@ const IndexPage = () => {
       image: 'https://riofor.com/images/og.png',
     },
   };
+
   return (
     <>
       <SEO
@@ -30,6 +33,8 @@ const IndexPage = () => {
         modal={data?.modal.active}
         menu={data?.menu.active}
       />
+      <ToTop />
+      <ToCall />
       <Modal />
       <Etusivu />
       <Palvelut />

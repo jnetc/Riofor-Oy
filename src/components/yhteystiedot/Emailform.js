@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 // Styles
 import '../../sass/components/mailform.scss';
-// Icon
-import Plain from '../icons/Plain';
 
 const Emailform = () => {
   const [status, setStatus] = useState({
@@ -105,15 +103,10 @@ const Emailform = () => {
       {!status.info.error && status.info.msg && (
         <div className="success">{status.info.msg}</div>
       )}
-      <button
-        type="submit"
-        className="btn fill btn-icon shrink-icon"
-        disabled={status.submitting}>
+      <button type="submit" className="btn fill" disabled={status.submitting}>
         {!status.submitting ? (
           !status.submitted ? (
-            <>
-              <span>Lähetä</span> <Plain />
-            </>
+            `Lähetä`
           ) : (
             `Lähetetty`
           )
